@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NotePad - Your Personal Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">✎</span><span>NotePad</span></div>
+      <p class="sidebar-label">WORKSPACE</p>
+      <button class="nav-item active" id="allNotesBtn">▤ <span>All Notes</span></button>
+      <button class="nav-item" id="pinnedBtn">★ <span>Pinned</span></button>
+      <div class="sidebar-bottom">
+        <button class="nav-item" id="themeBtn">☾ <span>Toggle Theme</span></button>
+        <p class="small-note">Your ideas, all in one place.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL SPACE</p>
+          <h1 id="pageTitle">All Notes</h1>
+          <p class="subtitle">Capture ideas. Keep moving forward.</p>
+        </div>
+        <button class="add-btn" id="newNoteBtn">＋ New Note</button>
+      </header>
+
+      <section class="toolbar">
+        <label class="search-box">⌕ <input id="searchInput" type="search" placeholder="Search your notes..." /></label>
+        <span class="note-count" id="noteCount">0 notes</span>
+      </section>
+
+      <section class="notes-grid" id="notesGrid" aria-live="polite"></section>
+      <section class="empty-state" id="emptyState">
+        <div class="empty-icon">✎</div>
+        <h2>No notes yet</h2>
+        <p>Create your first note and keep your ideas organized.</p>
+        <button class="add-btn" id="emptyNewBtn">＋ Create a note</button>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="noteDialog">
+    <form id="noteForm" method="dialog">
+      <div class="dialog-head">
+        <div><p class="eyebrow">NOTE EDITOR</p><h2 id="dialogTitle">Create a note</h2></div>
+        <button type="button" class="icon-btn" id="closeDialog" aria-label="Close">✕</button>
+      </div>
+      <label class="field-label" for="noteTitle">Title</label>
+      <input id="noteTitle" class="title-input" maxlength="80" placeholder="Give your note a title..." required />
+      <label class="field-label" for="noteBody">Your note</label>
+      <textarea id="noteBody" rows="9" placeholder="Start writing here..."></textarea>
+      <div class="dialog-actions">
+        <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+        <button type="submit" class="add-btn">Save Note</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
